@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Twitter"
+    tools:showIn="@layout/activity_home">
+
+    <TextView
+        android:id="@+id/welcometext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Welcome ..."
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:fontFamily="@font/allerta" />
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/allerta"
+        android:textColor="@color/colorPrimaryDark"
+        android:width="250dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="15dp"
+        android:text="Dibuat oleh StewardMelvinTang, kelas 10 RPL 1 absen 30 dalam rangka pts mapel RPL. aplikasi yang ditiru : Twitter, Sekian Terimakasih."/>
+
+    <TextView
+        android:layout_marginTop="100dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/allerta"
+        android:textColor="@color/colorPrimaryDark"
+        android:width="250dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="25dp"
+        android:text="17/3/2021"/>
+
+
+
+
+
+</LinearLayout>
