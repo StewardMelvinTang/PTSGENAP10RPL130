@@ -103,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
                                             String name = object.getString("name").trim();
                                             String email = object.getString("email").trim();
 
-                                            Intent intent = new Intent(LoginActivity.this, Twitter.class);
+                                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                             intent.putExtra("name", name);
                                             intent.putExtra("email", email);
                                             startActivity(intent);
@@ -145,7 +145,7 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             private void Backtomainmenu() {
-                Intent intentback = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intentback = new Intent(LoginActivity.this, MainTwitter.class);
                 startActivity(intentback);
             }
 
@@ -156,7 +156,7 @@ public class LoginActivity extends AppCompatActivity {
 
             private void LogikaSimpleLogIn(String email, String pass) {
                 if (email.equals("Steward") && pass.equals("Steward")) {
-                    Intent ketwitter = new Intent(LoginActivity.this, Twitter.class);
+                    Intent ketwitter = new Intent(LoginActivity.this, MainActivity.class);
                     ketwitter.putExtra("emailnya", ""+email);
                     startActivity(ketwitter);
                 }else{
