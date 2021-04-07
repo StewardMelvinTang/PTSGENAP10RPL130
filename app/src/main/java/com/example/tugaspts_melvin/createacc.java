@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -19,14 +17,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
-import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.StringReader;
-import java.net.URL;
-import java.nio.channels.InterruptedByTimeoutException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -157,7 +151,7 @@ public class createacc extends AppCompatActivity {
 
     private void Backtomenu() {
 
-        Intent kemainmenu = new Intent(createacc.this, MainActivity.class);
+        Intent kemainmenu = new Intent(createacc.this, MainTwitter.class);
         startActivity(kemainmenu);
         finish();
 

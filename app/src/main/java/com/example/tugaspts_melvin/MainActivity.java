@@ -1,44 +1,67 @@
 package com.example.tugaspts_melvin;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-// get all child disini
-    Button btn_createaccount;
-    Button btn_login;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity implements DataAdapter.ViewHolder.OnNoteListener {
+
+    RecyclerView recyclerView;
+    LinearLayoutManager layoutManager;
+    List<DataClass> userList;
+    DataAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        btn_login = (Button) findViewById(R.id.btn_login);
-        btn_createaccount = (Button) findViewById(R.id.btn_createaccount);
+        setContentView(R.layout.activity_home);
 
-        //on click event goes here
-        btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        });
 
-        btn_createaccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent buatakun = new Intent(MainActivity.this, createacc.class);
-                startActivity(buatakun);
-            }
-        });
 
-// end phase 1
+        initData();
+        initRecyclerView();
+
+
+
+
+
     }
-    // end phase 2
-}
 
+    //input data here
+    private void initData() {
+        userList = new ArrayList<>();
+
+        userList.add(new DataClass(R.drawable.avatar2, "Steward Melvin Tang", "Programmer & GameDesigner"));
+        userList.add(new DataClass(R.drawable.avatar3, "Muhammad Azmiy Nurrasyid", "GameProducer & GameDesigner"));
+        userList.add(new DataClass(R.drawable.avatar5, "Ayuni Fu'adah", "Visual Artist"));
+        userList.add(new DataClass(R.drawable.avatar1, "Samuel Yudi Gunawan", "Game Designer & BugHunter"));
+    }
+
+
+
+    private void initRecyclerView() {
+        recyclerView=findViewById(R.id.recyclerview);
+        layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(RecyclerView.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+        adapter=new DataAdapter(userList, this);
+        recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onNoteClick(int position, String nama, String role, int profile) {
+        Intent intentkeprofile = new Intent(com.example.tugaspts_melvin.MainActivity.this, profil.class);
+        intentkeprofile.putExtra("namabos", ""+nama);
+        intentkeprofile.putExtra("rolebos", ""+role);
+        intentkeprofile.putExtra("profilebos", profile);
+        startActivity(intentkeprofile);
+
+    }
+}

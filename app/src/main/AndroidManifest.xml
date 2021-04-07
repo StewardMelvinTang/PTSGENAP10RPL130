@@ -16,11 +16,12 @@
             android:name=".ui.login.createaccount"
             android:label="@string/title_activity_createaccount" />
         <activity
-            android:name=".Twitter"
+            android:name=".MainActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".profil"></activity>
+        <activity android:name=".MainTwitter">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
