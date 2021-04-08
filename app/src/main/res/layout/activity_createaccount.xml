@@ -10,6 +10,7 @@
     tools:context=".createacc">
 
     <LinearLayout
+        android:id="@+id/linearlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"

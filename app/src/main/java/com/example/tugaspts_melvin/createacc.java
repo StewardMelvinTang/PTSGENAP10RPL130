@@ -3,9 +3,11 @@ package com.example.tugaspts_melvin;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -31,6 +33,7 @@ public class createacc extends AppCompatActivity {
     Button btn_register;
     Button btn_register2;
     ProgressBar pg_loading;
+    LinearLayout linearlayout;
     TextInputEditText textInputEditTextusername, textInputEditTextemail, textInputEditTextpassword;
     private static String URL_REGIST = "http://192.168.1.2/android_register_login/register.php";
 
@@ -39,6 +42,7 @@ public class createacc extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_createaccount);
+        linearlayout = (LinearLayout) findViewById(R.id.linearlayout);
         btn_back = (Button) findViewById(R.id.btn_back);
         btn_twitter = (Button) findViewById(R.id.btn_twitter);
         btn_register = (Button) findViewById(R.id.btn_register);
@@ -64,7 +68,7 @@ public class createacc extends AppCompatActivity {
         });
 
 
-
+        linearlayout.setPadding(0, getStatusBarHeight(), 0, 0);
 
 
 
@@ -156,6 +160,23 @@ public class createacc extends AppCompatActivity {
         finish();
 
     }
+
+    private int getStatusBarHeight() {
+        int height;
+
+        Resources myResources = getResources();
+        int idStatusBarHeight = myResources.getIdentifier(
+                "status_bar_height", "dimen", "android");
+        if (idStatusBarHeight > 0) {
+            height = getResources().getDimensionPixelSize(idStatusBarHeight);
+
+        }else{
+            height = 0;
+        }
+
+        return height;
+    }
+
 }
 
 

@@ -5,35 +5,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="#DAE9FE"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:layout_marginLeft="15dp"
-    android:layout_marginRight="15dp">
+    android:id="@+id/coordinatorlayout"
+   >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:paddingTop="20dp"
-            android:textColor="@android:color/black"
-            android:layout_gravity="center"
-            android:textAlignment="center"
-            android:text="New Game Released!"/>
 
-        <ImageView
-            android:layout_marginTop="20dp"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/thumbnail"
-            android:id="@+id/icon">
-        </ImageView>
+            android:layout_height="139dp"
+            android:background="@drawable/roundedcorner_bg"
+            android:backgroundTint="#ffffff"
+            android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+
+            <ImageView
+                android:id="@+id/bofcbtn"
+                android:layout_width="125dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/thumbnail"></ImageView>
+
+            <ImageView
+                android:id="@+id/browserbtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_insert_link_24"
+                android:padding="8dp"
+                android:background="@drawable/roundedcorner_bg">
+            </ImageView>
+                    <ImageView
+                android:id="@+id/sharebtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_share_24"
+                android:padding="8dp"
+                android:background="@drawable/roundedcorner_bg">
+            </ImageView>
+
+
+
+
+
+
+                </LinearLayout>
+
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="10dp"
+                android:text="New Game Released!"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="25dp" />
+        </LinearLayout>
 
         <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Developers :"
@@ -41,6 +94,8 @@
             android:textColor="@android:color/black"/>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:paddingTop="25dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

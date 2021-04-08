@@ -1,9 +1,16 @@
 package com.example.tugaspts_melvin;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.solver.state.State;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import android.content.Intent;
+import android.content.res.Resources;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import com.android.volley.AuthFailureError;
@@ -26,9 +33,10 @@ public class LoginActivity extends AppCompatActivity {
     Button btn_twitter;
     Button btn_3dot;
     Button btn_login;
-    Button btn_register2;
+    LinearLayout linearLayout;
     TextInputEditText textInputEditTextemail;
     TextInputEditText textInputEditTextpassword;
+    ImageView logotwitter;
     private static String URL_LOGIN = "http://192.168.1.2/android_register_login/login.php";
     private ProgressBar pg_loading;
 
@@ -39,14 +47,16 @@ public class LoginActivity extends AppCompatActivity {
         btn_back = (Button) findViewById(R.id.btn_back);
         btn_3dot = (Button) findViewById(R.id.btn_3dot);
         btn_twitter = (Button) findViewById(R.id.btn_twitter);
+        linearLayout = (LinearLayout) findViewById(R.id.linearlayout);
         btn_login = (Button) findViewById(R.id.btn_login);
         pg_loading = (ProgressBar) findViewById(R.id.pg_loading);
         textInputEditTextemail = (TextInputEditText) findViewById(R.id.tb_loginemail);
         textInputEditTextpassword = (TextInputEditText) findViewById(R.id.tb_loginpassword);
 
-
+        linearLayout.setPadding(0, getStatusBarHeight(), 0, 0);
 
         // on click event
+
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,6 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                 SpawnToast("Belum ada apa apa disini.");
             }
         });
+
 
 
                 // end phase
@@ -164,5 +175,23 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
             }
+    private int getStatusBarHeight() {
+        int height;
+
+        Resources myResources = getResources();
+        int idStatusBarHeight = myResources.getIdentifier(
+                "status_bar_height", "dimen", "android");
+        if (idStatusBarHeight > 0) {
+            height = getResources().getDimensionPixelSize(idStatusBarHeight);
+
+        }else{
+            height = 0;
+        }
+
+        return height;
+    }
+
+
+
             // end phase2
         }
